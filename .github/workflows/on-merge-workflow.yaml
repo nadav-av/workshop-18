@@ -18,3 +18,24 @@ jobs:
     runs-on: # [to be filled]
     steps:
     # [rest to be filled]
+
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        run: npm i
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{091220ca-5ba6-41be-a467-91449580f7e9}}
+          heroku_app_name: "ws16inmonday" #Must be unique in Heroku
+          heroku_email: "nadav6295@gmail.com"
