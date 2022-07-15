@@ -5,7 +5,6 @@ name: pr-workflow
 on:
   pull_request:
     branches: [master]
-  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
